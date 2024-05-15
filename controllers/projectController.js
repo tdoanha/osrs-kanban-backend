@@ -6,7 +6,8 @@ const projectController = {
   // Create a new project
   createProject: async (req, res) => {
     try {
-      const { title, project_description, created_on, created_by } = req.body;
+      const { title, project_description, created_by } = req.body;
+      const created_on = new Date();
       const newProject = await Project.createProject(
         title,
         project_description,

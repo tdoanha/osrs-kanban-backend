@@ -22,11 +22,13 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/userRoute");
-var projectsRouter = require("./routes/projectRouter");
+var usersRouter = require("./routes/usersRouter.js");
+var projectsRouter = require("./routes/projectsRouter.js");
+var tasksRouter = require("./routes/tasksRouter.js");
 app.use("/", indexRouter);
 app.use("/kanban/users", usersRouter);
 app.use("/kanban/projects", projectsRouter);
+app.use("/kanban/tasks", tasksRouter);
 
 // Authentication middleware
 // app.use(`/kanban`, authMiddleware);
